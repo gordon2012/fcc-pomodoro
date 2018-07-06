@@ -2,4 +2,98 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  text-align: center;
+}
+
+/* LAYOUT */
+.App {
+  box-sizing: border-box;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  min-height: 100vh;
+  display: flex;
+}
+#pomodoro {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+#pomodoro > * {
+  border: 3px solid magenta;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#timer-label {
+  grid-column: span 3;
+}
+#time-left {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+#start_stop,
+#reset {
+  grid-row: span 2;
+}
+
+#session,
+#break {
+  grid-row: span 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+#session > *,
+#break > * {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+#session-label,
+#break-label {
+  grid-column: span 3;
+}
+
+/* SPACING */
+.App {
+  padding: 2em;
+}
+#pomodoro {
+  padding: 2em;
+  grid-gap: 2em;
+}
+
+/* font */
+#timer-label {
+  font-size: 2em;
+}
+#time-left {
+  font-size: 10em;
+}
+button {
+  font-size: 5em;
+}
+#start_stop,
+#reset {
+  font-size: 2.5em;
+}
+
+#session-label,
+#break-label {
+  font-size: 2.5em;
+}
+#session-length,
+#break-length {
+  font-size: 3em;
+}
+
+.App {
+  border: 3px solid red;
+}
+#pomodoro {
+  border: 3px solid blue;
 }
