@@ -92,9 +92,14 @@ class App extends Component {
   };
 
   render() {
-    const { timer, sessionLength, breakLength } = this.state;
+    const {
+      interval,
+      timer,
+      sessionLength,
+      breakLength
+    } = this.state;
     return (
-      <div className="App">
+      <div className={`App ${interval ? timer : ''}`}>
         <audio
           id="beep"
           ref={r => {
@@ -104,7 +109,9 @@ class App extends Component {
         />
         <div id="pomodoro">
           <div id="timer-label">{timer}</div>
+
           <div id="time-left">{this.formatTime()}</div>
+
           <div id="session">
             <div id="session-label">Session Length</div>
             <button id="session-decrement" onClick={this.sessionDecrement}>
@@ -116,7 +123,8 @@ class App extends Component {
             </button>
           </div>
           <button id="start_stop" onClick={this.startStop}>
-            Start/Stop
+            {/* Start/Stop */}
+            {interval ? 'Stop' : 'Start'}
           </button>
           <div id="break">
             <div id="break-label">Break Length</div>

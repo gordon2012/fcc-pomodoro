@@ -8,10 +8,8 @@ body {
 /* LAYOUT */
 .App {
   box-sizing: border-box;
-
   max-width: 1200px;
   margin: 0 auto;
-
   min-height: 100vh;
   display: flex;
 }
@@ -23,7 +21,6 @@ body {
 }
 
 #pomodoro > * {
-  border: 3px solid magenta;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -69,7 +66,7 @@ body {
 
 /* font */
 #timer-label {
-  font-size: 2em;
+  font-size: 4em;
 }
 #time-left {
   font-size: 10em;
@@ -77,11 +74,13 @@ body {
 button {
   font-size: 5em;
 }
+button:hover {
+  cursor: pointer;
+}
 #start_stop,
 #reset {
   font-size: 2.5em;
 }
-
 #session-label,
 #break-label {
   font-size: 2.5em;
@@ -91,9 +90,61 @@ button {
   font-size: 3em;
 }
 
-.App {
-  border: 3px solid red;
+/* Color */
+body {
+  background: #eee;
 }
 #pomodoro {
-  border: 3px solid blue;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: white;
+}
+#time-left {
+  border: 10px solid #1b1b1b;
+  border-radius: 20px;
+  background: #cfcfcf;
+}
+button {
+  color: white;
+  border: 5px solid #000063;
+  border-radius: 10px;
+  background: #4527a0;
+}
+button:hover {
+  background: #311b92;
+}
+#session-decrement, #session-increment {
+  border-color: #003300;
+  background: #2e7d32;
+}
+#session-decrement:hover, #session-increment:hover {
+background: #1b5e20;
+}
+#break-decrement, #break-increment {
+  border-color: #8e0000;
+  background:#c62828;
+}
+#break-decrement:hover, #break-increment:hover {
+background: #b71c1c;
+}
+
+/* color: session */
+.Session #pomodoro {
+  background: #c8e6c9;
+}
+.Session #timer-label {
+  color: #003300;
+}
+.Session #time-left {
+  background: #81c784;
+}
+
+/* color: break */
+.Break #pomodoro {
+  background: #ffcdd2;
+}
+.Break #timer-label {
+  color: #8e0000;
+}
+.Break #time-left {
+  background: #e57373;
 }
